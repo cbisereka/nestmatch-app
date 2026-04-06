@@ -1,0 +1,20 @@
+{
+  "name": "nestmatch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NestMatch — Canada's safest rental and roommate matching platform",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  }
+}
