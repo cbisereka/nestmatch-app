@@ -351,7 +351,7 @@ function Onboarding(){
   const{profile,completeOnboarding,busy}=useAuth()
   const[step,setStep]=useState(0)
   const[form,setForm]=useState({monthly_income:'',max_budget:'',occupation:'',bio:'',schedule:'flexible',cleanliness_level:4,pets_ok:false,smoking_ok:false,looking_for:'2BR'})
-  const qMax=form.monthly_income?Math.floor(parseFloat(form.monthly_income)/3):null
+  
   const isL=profile?.role==='landlord'
 
   async function finish(){await completeOnboarding({monthly_income:parseFloat(form.monthly_income)||null,max_budget:parseFloat(form.max_budget)||null,occupation:form.occupation||null,bio:form.bio||null,schedule:form.schedule,cleanliness_level:form.cleanliness_level,pets_ok:form.pets_ok,smoking_ok:form.smoking_ok,looking_for:form.looking_for})}
@@ -634,7 +634,7 @@ function ListingFormModal({listing, onClose, onSaved}) {
               </div>
               <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
                 <div><FL label="Square Footage" req/><Inp type="number" value={form.sqft} onChange={e=>set("sqft",e.target.value)} placeholder="e.g. 850" icon="📐" error={errs.sqft}/></div>
-                <div><FL label="Min Income Req."/><Inp type="number" value={form.min_income_required} onChange={e=>set("min_income_required",e.target.value)} placeholder="Auto" icon="💼"/></div>
+                <div><FL label="Min Income (optional — your choice)"/><Inp type="number" value={form.min_income_required} onChange={e=>set("min_income_required",e.target.value)} placeholder="Auto" icon="💼"/></div>
               </div>
               <div><FL label="Status"/><SI value={form.status} onChange={e=>set("status",e.target.value)} options={[{value:"active",label:"Active - visible to renters"},{value:"draft",label:"Draft - hidden"},{value:"rented",label:"Rented - no longer available"}]}/></div>
               <div>
